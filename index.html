@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalacticGoods</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="icons/ecom.ico" alt="Logo" class="toggle-btn" onclick="toggleMenu()" id="toggle">
+                <a href="#" class="nav-brand" onclick="showPage('home')">GalacticGoods</a>
+
+            </div>
+
+
+            <div class="nav-center" id="menu">
+
+                <a href="#" class="nav-link active" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link" onclick="showPage('categories')">Categories</a>
+                <a href="#" class="nav-link" onclick="showPage('aboutUs')">About Us</a>
+                <a href="#" class="nav-link" onclick="showPage('contactUs')">Contact Us</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="nav-link nav-icon" id="cartLink" onclick="toggleSidebarCart()">
+                    <img src="icons/cart.ico" alt="Cart">
+                </a>
+                <a href="#" class="nav-link nav-icon" id="profileLink" onclick="showPage('profile')" style="display: none;">
+                    <img src="icons/profile.ico" alt="Profile">
+                </a>
+                <a href="#" class="nav-link nav-icon" id="authLink" onclick="showPage('auth')">
+                    <img src="icons/login.ico" alt="Login">
+                </a>
+                <a href="#" class="nav-link nav-icon" id="logoutLink" onclick="logout()" style="display: none;">
+                    <img src="icons/login.ico" alt="Logout">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-cart" id="sidebarCart">
+        <div class="sidebar-cart-header">
+            <span class="sidebar-cart-title">Your Cart</span>
+            <button class="close-cart-btn" onclick="toggleSidebarCart()">×</button>
+        </div>
+        <div class="sidebar-cart-content">
+            <div class="cart-items" id="cartItems">
+
+            </div>
+        </div>
+        <div class="sidebar-cart-footer">
+            <span class="cart-total">Total: $<span id="cartTotal">0</span></span>
+            <button class="cart-checkout-btn" onclick="checkoutAndClose()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="homePage" class="page active">
+            <div class="hero-section">
+
+                <div class="hero-content">
+                    <h1>GalacticGoods</h1>
+                    <p>A universe of products at your fingertips. Our products are available at our online stores and our online
+                        stores
+                        are available at your fingertips. We have a wide variety of products that you can choose from.</p>
+                    <a href="#" class="hero-button" onclick="showPage('categories')">Shop Now</a>
+                </div>
+                <div class="hero-section-image">
+                    <img src="./images/A woman loving online shopping with a cart.png" alt="Hero Image"
+                        class="hero-image">
+
+                </div>
+            </div>
+
+            <section class="home-categories-section">
+                <h2>Shop by Category</h2>
+                <div class="home-categories-grid">
+
+                </div>
+            </section>
+
+            <section id="banners" class="container-fluid section banners">
+                <h1 class="section-title">Best Offers</h1>
+                <div class="banner-track">
+                    <a href="#img1" class="banner-image">
+                        <img src="images/8528218.jpg" alt="Image 1" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img2" class="banner-image">
+                        <img src="images/10150011.jpg" alt="Image 2" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img3" class="banner-image">
+                        <img src="images/2445472.jpg" alt="Image 3" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img4" class="banner-image">
+                        <img src="images/7965617 - Copy.jpg" alt="Image 4" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img5" class="banner-image">
+                        <img src="images/8642509.jpg" alt="Image 5" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img1" class="banner-image">
+                        <img src="images/8528218.jpg" alt="Image 1" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img2" class="banner-image">
+                        <img src="images/10150011.jpg" alt="Image 2" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img3" class="banner-image">
+                        <img src="images/2445472.jpg" alt="Image 3" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img4" class="banner-image">
+                        <img src="images/7965617 - Copy.jpg" alt="Image 4" class="img-fluid banner-pic">
+                    </a>
+                    <a href="#img5" class="banner-image">
+                        <img src="images/8642509.jpg" alt="Image 5" class="img-fluid banner-pic">
+                    </a>
+                </div>
+            </section>
+
+            <section class="featured-section">
+                <h2>Featured Products</h2>
+                <div class="featured-grid">
+
+
+                </div>
+            </section>
+
+
+            <section class="contact-us" id="contactSectionHome">
+
+
+                <div class="layer2">
+                    <h2 style="color: white;">Contact Us</h2>
+
+                    <form class="contact-form" onsubmit="submitContactForm(event, 'contactSectionHome')">
+                        <div class="contact-form-group ">
+                            <label for="name">Name</label>
+                            <input type="text" class="input-form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="contact-form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="input-form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="contact-form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3"
+                                placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="Shop-btn" style="align-self: center;">SEND</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- </div>  -->
+            <!-- </section> -->
+
+        </div>
+
+        <div id="categoriesPage" class="page">
+            <h2>Our Categories</h2>
+            <div class="category-grid">
+
+            </div>
+
+        </div>
+        <div id="categoryProductsPage" class="page">
+            <div class="category-header">
+                <button class="btn btn-secondary" onclick="showPage('categories')">Back to Categories</button>
+                <div>
+                    <label for="sort">Sort By:</label>
+                    <select id="sort" onchange="sortProducts()">
+                        <option value="price-low-high">Price: Low to High</option>
+                        <option value="price-high-low">Price: High to Low</option>
+                        <option value="name-az">Name: A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="banner-container">
+                <img id="categoryBannerImage" src="" alt="Category Banner">
+            </div>
+            <h2 id="categoryName"></h2>
+            <div class="product-grid">
+
+
+
+            </div>
+        </div>
+
+        <div id="productDetailPage" class="page">
+            <div class="product-detail-container">
+                <div class="product-image-column">
+                    <button class="btn btn-secondary back-btn" onclick="showPreviousPage()">Back</button>
+                    <div class="image-container">
+                        <img id="productDetailImage" src="" alt="">
+                        <button class="zoom-image-btn" onclick="openImageModal()">
+                            <img src="icons/zoom.ico" alt="Zoom">
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info-column">
+                    <h2 id="productDetailName"></h2>
+                    <p class="product-price">Price: <span id="productDetailPrice"></span></p>
+                    <p id="productDetailDescription"></p>
+                    <div id="productDetailAvailability"></div>
+                    <button class="btn btn-primary" onclick="addToCart(currentProductId)">Add to
+                        Cart</button>
+                </div>
+                <div class="additional-details-section">
+                    <h3>Additional Details</h3>
+                    <ul id="productDetailMoreInfo">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="checkoutPage" class="page">
+            <h2>Checkout</h2>
+            <div class="card" style="margin-top: 1rem;">
+                <div class="card-body">
+                    <form onsubmit="placeOrder(event)">
+                        <h3>Shipping Information</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group" style="grid-column: span 2;">
+                                <input type="text" class="form-control" placeholder="Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="City" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Postal Code" required>
+                            </div>
+                        </div>
+
+                        <h3>Payment Information</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                            <div class="form-group" style="grid-column: span 2;">
+                                <input type="text" class="form-control" placeholder="Card Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="CVV" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Place Order
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="profilePage" class="page">
+            <h2>User Profile</h2>
+            <div class="profile-grid">
+                <div class="profile-sidebar">
+                    <button onclick="showProfileSection('profile-info')" class="profile-btn active"
+                        id="profileInfoBtn"> <img src="icons/profile.ico" alt="Profile"> Profile</button>
+                    <button onclick="showProfileSection('orders')" class="profile-btn" id="ordersBtn"> <img
+                            src="icons/cart.ico" alt="Orders"> Orders</button>
+                    <button onclick="showProfileSection('favorites')" class="profile-btn" id="favoritesBtn"> <img
+                            src="icons/heart.ico" alt="Favorites"> Favorites</button>
+                </div>
+                <div class="profile-content" id="profileContent">
+                    <div id="profile-info" class="profile-section active">
+                        <div class="card" style="margin-top: 1rem;">
+                            <div class="card-body">
+                                <img src="icons/user.png" alt="Profile Picture"
+                                    style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1rem;">
+                                <h3 id="profileName"></h3>
+                                <p id="profileEmail"></p>
+                                <button class="btn btn-primary" onclick="showEditProfile()">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="orders" class="profile-section">
+                        <div class="card" style="margin-top: 1rem;">
+                            <div class="card-body">
+                                <h3>Your Orders</h3>
+                                <div id="orderItems" class="cart-items profile-orders-items">
+
+                                </div>
+                                <div class="cart-total" style="text-align: right; margin-top: 1rem;">
+                                    Total: $<span id="orderTotal">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="favorites" class="profile-section">
+                        <div class="card" style="margin-top: 1rem;">
+                            <div class="card-body">
+                                <h3>Your Favorites</h3>
+                                <div id="favoriteItems" class="product-grid profile-favorites-grid">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="editProfilePage" class="page">
+            <h2>Edit Profile</h2>
+            <button class="btn btn-secondary" onclick="showPage('profile')">Back to Profile</button>
+            <div class="card" style="margin-top: 1rem;">
+                <div class="card-body">
+                    <form onsubmit="updateProfile(event)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="editFirstName" placeholder="First Name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="editLastName" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="editEmail" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="editPass" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="authPage" class="page">
+            <div class="close-auth" onclick="closeAuthPage()">×</div>
+            <div class="container" id="container">
+                <div class="form-container sign-up">
+                    <form id="registerFormSubmit" onsubmit="register(event)">
+                        <h1 class="form-title-h1">Create Account</h1>
+                        <input type="text" id="registerName" placeholder="Full Name" required>
+                        <span id="wrongName" class="error-message"></span>
+
+                        <input type="email" id="registerEmail" placeholder="Email" required>
+                        <span id="wrongEmail" class="error-message"></span>
+
+                        <input type="password" id="registerPassword" placeholder="Password" required>
+                        <span id="wrongPass" class="error-message"></span>
+
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                        <span id="wrongPhone" class="error-message"></span>
+
+                        <input type="text" placeholder="Country" id="country" name="country">
+                        <span id="wrongCountry" class="error-message"></span>
+
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in">
+                    <form id="loginForm" onsubmit="login(event)">
+                        <h1 class="form-title-h1">Sign In</h1>
+                        <div class="social-icons">
+                            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <span>or use your email password</span>
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <button type="submit">Sign In</button>
+                    </form>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle">
+                        <div class="toggle-panel toggle-left">
+                            <img src="./images/a woman shopping for clothes online (1).png" alt=""
+                                class="register-img signIN-img">
+                            <button class="hidden" id="login">Sign In</button>
+                        </div>
+                        <div class="toggle-panel toggle-right">
+                            <img src="./images/a woman shopping for clothes online (1).png" alt=""
+                                class="register-img">
+                            <button class="hidden" id="register">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="aboutUsPage" class="page">
+            <h2>About Us</h2>
+            <p>Learn more about our team and what we do.</p>
+            <div class="team-grid">
+
+            </div>
+        </div>
+
+        <div id="contactUsPage" class="page">
+            <section class="contact-us contact-page-section" id="contactUs">
+                <div class="layer2">
+                    <h2 style="color: white;">Contact Us</h2>
+                    <form class="contact-form" onsubmit="submitContactForm(event, 'contactUsPage')">
+                        <div class="contact-form-group ">
+                            <label for="name">Name</label>
+                            <input type="text" class="input-form-control" id="nameContactPage"
+                                placeholder="Enter your name">
+                        </div>
+                        <div class="contact-form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="input-form-control" id="emailContactPage"
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="contact-form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="messageContactPage" rows="3"
+                                placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="Shop-btn" style="align-self: center;">SEND</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <div id="img1" class="modal">
+        <a href="#banners" class="close-btn">×</a>
+        <img src="images/8528218.jpg" alt="Image 1">
+    </div>
+    <div id="img2" class="modal">
+        <a href="#banners" class="close-btn">×</a>
+        <img src="images/10150011.jpg" alt="Image 2">
+    </div>
+    <div id="img3" class="modal">
+        <a href="#banners" class="close-btn">×</a>
+        <img src="images/2445472.jpg" alt="Image 3">
+    </div>
+    <div id="img4" class="modal">
+        <a href="#banners" class="close-btn">×</a>
+        <img src="images/7965617 - Copy.jpg" alt="Image 4">
+    </div>
+    <div id="img5" class="modal">
+        <a href="#banners" class="close-btn">×</a>
+        <img src="images/8642509.jpg" alt="Image 5">
+    </div>
+
+    <div id="imageModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; overflow: auto;">
+        <img id="modalImage" src="" style="max-width: 90%; max-height: 90%;">
+        <button
+            style="position: absolute; top: 20px; right: 30px; background: none; color: white; border: none; font-size: 30px; cursor: pointer;"
+            onclick="closeImageModal()">×</button>
+    </div>
+
+
+    <footer class="home-categories-section footer">
+        <p>A universe of products at your fingertips ❤</p>
+        <ul class="home-footer">
+            <li><a href="#"
+                    onclick="showCategoryProducts('clothing', 'Clothing', 'images/clothes/1.webp')">Clothes</a>
+            </li>
+            <li><a href="#"
+                    onclick="showCategoryProducts('shoes', 'Shoes', 'images/iloveimg-resized/DALL·E 2025-01-29 17.54.08 - A stylish display stand filled with various shoes, including sneakers, high heels, boots, and casual footwear. The shoes are neatly arranged on shelve.webp')">Shoes</a>
+            </li>
+            <li><a href="#"
+                    onclick="showCategoryProducts('skincare', 'Skin Care', 'images/make up/DALL·E 2025-01-29 17.51.51 - A stylish display stand filled with various makeup and skincare products, including lipsticks, foundation, eyeshadow palettes, moisturizers, and serum.webp')">Skin Care</a>
+            </li>
+            <li><a href="#"
+                    onclick="showCategoryProducts('appliances', 'Appliances', 'images/electronics/DALL·E 2025-01-29 17.57.45 - A modern appliance store showcasing various home appliances, including refrigerators, washing machines, ovens, microwaves, and vacuum cleaners. The st.webp')">Appliance</a>
+            </li>
+            <li><a href="#"
+                    onclick="showCategoryProducts('electronics', 'Electronics', 'images/electronics/eb384b9c-eb6b-415e-b053-706b87308d00.webp')">Electronic</a>
+            </li>
+        </ul>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const toggle = document.getElementById('toggle-btn');
+            const menu = document.getElementById('menu');
+            // Check if menu is currently open by checking if inline styles are present
+            if (menu.style.display === 'flex') {
+                // Close the menu by removing all inline styles
+                menu.removeAttribute('style');
+                toggle.removeAttribute('style');
+            } else {
+                // Open the menu by applying necessary inline styles
+                menu.style.display = 'flex';
+                menu.style.flexDirection = 'column';
+                menu.style.justifyContent = 'center';
+                menu.style.alignItems = 'center';
+                menu.style.position = 'fixed';
+                menu.style.top = '4rem';
+                menu.style.left = '5rem';
+                menu.style.width = 'auto';
+                menu.style.height = 'auto';
+                menu.style.backgroundColor = '#feddca7e';
+                menu.style.zIndex = '1000';
+                menu.style.padding = '0.5rem';
+                menu.style.borderRadius = '5px';
+                menu.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+                menu.style.transform = 'translateX(-50%)';
+                
+                // Hide the toggle button
+                toggle.style.display = 'none';
+    
+                // Add event listeners to close menu on interaction
+                document.addEventListener('click', closeMenu);
+                window.addEventListener('scroll', closeMenu);
+                window.addEventListener('resize', returnMenuToOriginalState);
+            }
+        }
+    
+        function closeMenu() {
+            const menu = document.getElementById('menu');
+            const toggle = document.getElementById('toggle-btn');
+            
+            // Remove all inline styles to revert to CSS control
+            menu.removeAttribute('style');
+            toggle.removeAttribute('style');
+            
+            // Cleanup event listeners
+            document.removeEventListener('click', closeMenu);
+            window.removeEventListener('scroll', closeMenu);
+            window.removeEventListener('resize', returnMenuToOriginalState);
+        }
+    
+        function returnMenuToOriginalState() {
+            const menu = document.getElementById('menu');
+            // Check if screen is desktop size and reset styles
+            if (window.innerWidth >= 768) {
+                menu.removeAttribute('style');
+            }
+        }
+    
+        // Initialize toggle button event listener
+        document.getElementById('toggle-btn').addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent immediate close when clicking toggle
+            toggleMenu();
+        });
+    </script>
+
+    <script src="./js/all.min.js"></script>
+    <script src="./js/script.js"></script>
+
+
+</body>
+
+</html>
