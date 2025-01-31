@@ -683,26 +683,30 @@ let categories = [{
 },
 
 ];
-let teamMembers = [{
-    name: 'Susana Sameh',
-    role: 'Lead Developer',
-    image: 'icons/profile.ico'
-},
-{
-    name: 'Mustafa Gamal',
-    role: 'Developer',
-    image: 'icons/profile.ico'
-},
-// {
-//     name: 'Mina Ramzy',
-//     role: 'Developer',
-//     image: 'icons/profile.ico'
-// },
-// {
-//     name: 'Ahmed Elsayed',
-//     role: 'Developer',
-//     image: 'icons/profile.ico'
-// }
+let teamMembers = [
+  {
+    name: "Susana Sameh",
+    role: "Lead Developer",
+    image: "../images/team/WhatsApp Image 2023-11-25 at 5.43.19 PM.jpeg",
+    linkedin: "https://www.linkedin.com/in/susana-sameh",
+  },
+  {
+    name: "Mustafa Gamal",
+    role: "Developer",
+    image: "../images/team/3986d7eb-59c1-4d60-8120-b8ab84b25a12.jpeg",
+    linkedin:
+      "https://www.linkedin.com/in/mustafa-gamal-074099244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  // {
+  //     name: 'Mina Ramzy',
+  //     role: 'Developer',
+  //     image: 'icons/profile.ico'
+  // },
+  // {
+  //     name: 'Ahmed Elsayed',
+  //     role: 'Developer',
+  //     image: 'icons/profile.ico'
+  // }
 ];
 let loggedInUserName = '';
 let loggedInUserEmail = '';
@@ -1134,7 +1138,7 @@ function renderAboutUs() {
     const teamGrid = document.querySelector('#aboutUsPage .team-grid');
     teamGrid.innerHTML = teamMembers.map(member => `
 <div class="team-member">
-<img src="${member.image}" alt="${member.name}" class="member-image">
+<a href="${member.linkedin}" target="_blank"> <img src="${member.image}" alt="${member.name}" class="member-image"></a>
 <h3 class="member-name">${member.name}</h3>
 <p class="member-role">${member.role}</p>
 </div>
