@@ -688,15 +688,15 @@ let teamMembers = [
   {
     name: "Susana Sameh",
     role: "Lead Developer",
-    image: "../images/team/WhatsApp Image 2023-11-25 at 5.43.19 PM.jpeg",
+    image: "images/team/WhatsApp Image 2023-11-25 at 5.43.19 PM.jpeg",
     linkedin: "https://www.linkedin.com/in/susana-sameh",
   },
   {
     name: "Mustafa Gamal",
     role: "Developer",
-    image: "../images/team/3986d7eb-59c1-4d60-8120-b8ab84b25a12.jpeg",
+    image: "images/team/3986d7eb-59c1-4d60-8120-b8ab84b25a12.jpeg",
     linkedin:
-      "https://www.linkedin.com/in/mustafa-gamal-074099244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "https://www.linkedin.com/in/mustafa-gamal-074099244",
   },
   // {
   //     name: 'Mina Ramzy',
