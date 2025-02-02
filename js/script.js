@@ -646,42 +646,43 @@ let products = [{
 }
 
 ];
-let categories = [{
-    id: 'electronics',
-    name: 'Electronics',
-    categoryImage: 'images/electronics/DALL·E 2025-01-29 17.37.03 - A collection of various electronic gadgets displayed on a modern table, including wireless earbuds, a smartphone, smartwatches, and other tech accesso.webp',
-    bannerImage: 'images/electronics/eb384b9c-eb6b-415e-b053-706b87308d00.webp',
-    description: 'Explore the latest in electronics and gadgets'
-},
-{
-    id: 'clothing',
-    name: 'Clothing',
-    categoryImage: 'images/real image of only clothes.png',
-    bannerImage: 'images/clothes/1.webp',
-    description: 'Discover trendy and comfortable clothing for all occasions'
-},
-{
-    id: 'shoes',
-    name: 'Shoes',
-    categoryImage: 'images/real image of shoes products.png',
-    bannerImage: 'images/iloveimg-resized/DALL·E 2025-01-29 17.54.08 - A stylish display stand filled with various shoes, including sneakers, high heels, boots, and casual footwear. The shoes are neatly arranged on shelve.webp',
-    description: 'Step up your style with our diverse shoe collection'
-    },
-{
-    id: 'skincare',
-    name: 'Skin Care',
-    categoryImage: 'images/make up/DALL·E 2025-01-29 17.50.48 - A stylish display stand filled with various makeup and skincare products, including lipsticks, foundations, serums, and moisturizers. The products are.webp',
-    bannerImage: 'images/make up/DALL·E 2025-01-29 17.51.51 - A stylish display stand filled with various makeup and skincare products, including lipsticks, foundation, eyeshadow palettes, moisturizers, and serum.webp',
-    description: 'Nourish and protect your skin with our premium skin care products'
-},
-{
-    id: 'appliances',
-    name: 'Appliances',
-    categoryImage: 'images/Gemini_Generated_Image_afdp0zafdp0zafdp.jpeg',
-    bannerImage: 'images/electronics/DALL·E 2025-01-29 17.57.45 - A modern appliance store showcasing various home appliances, including refrigerators, washing machines, ovens, microwaves, and vacuum cleaners. The st.webp',
-    description: 'Upgrade your home with our range of modern appliances'
-},
-
+let categories = [
+  {
+    id: "electronics",
+    name: "Electronics",
+    categoryImage: "images/electronics/category-img.webp",
+    bannerImage: "images/electronics/eb384b9c-eb6b-415e-b053-706b87308d00.webp",
+    description: "Explore the latest in electronics and gadgets",
+  },
+  {
+    id: "clothing",
+    name: "Clothing",
+    categoryImage: "images/real image of only clothes.png",
+    bannerImage: "images/clothes/1.webp",
+    description: "Discover trendy and comfortable clothing for all occasions",
+  },
+  {
+    id: "shoes",
+    name: "Shoes",
+    categoryImage: "images/real image of shoes products.png",
+    bannerImage: "images/iloveimg-resized/shoseProducts.webp",
+    description: "Step up your style with our diverse shoe collection",
+  },
+  {
+    id: "skincare",
+    name: "Skin Care",
+    categoryImage: "images/make up/category-img2.webp",
+    bannerImage: "images/make up/product-img-skin.webp",
+    description:
+      "Nourish and protect your skin with our premium skin care products",
+  },
+  {
+    id: "appliances",
+    name: "Appliances",
+    categoryImage: "images/Gemini_Generated_Image_afdp0zafdp0zafdp.jpeg",
+    bannerImage: "images/electronics/electronicProducts.webp",
+    description: "Upgrade your home with our range of modern appliances",
+  },
 ];
 let teamMembers = [
   {
